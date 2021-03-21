@@ -4,8 +4,6 @@
     <div class="box" v-for="e in elements" v-bind:key="e.id">
       {{ e.title }}
     </div>
-
-    <button v-on:click="findAll">Click</button>
   </div>
 
 </template>
@@ -13,6 +11,9 @@
 <script>
 
 export default {
+  created() {
+    this.findAll() // cuando la app es creada, se llama al metodo findAll
+  },
   data() {
     return {
       elements: [] // se define la propiedad o variable que vamos a utilizar
