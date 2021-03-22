@@ -22,6 +22,7 @@
 export default {
   created() {
     this.find(); // cuando la app es creada, se llama al metodo findAll
+    console.log(this.$route.params.id);
   },
   data() {
     return {
