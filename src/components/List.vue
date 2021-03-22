@@ -1,9 +1,20 @@
 <template>
+  <div class="container">
+    <div v-for="e in elements" v-bind:key="e.id" >
+      <!-- utilizar siempre : antes de utilizar data dinamica (propiedad) -->
+      <b-card
+        :title="e.title"
+      >
 
-  <div>
-    <div class="box" v-for="e in elements" v-bind:key="e.id">
-      {{ e.title }}
+      <b-card-text>
+        {{ e.description }}
+      </b-card-text>
+
+      </b-card>
     </div>
+    <!-- div class="box" v-for="e in elements" v-bind:key="e.id" >
+      {{ e.title }}
+    </div-->
   </div>
 
 </template>
