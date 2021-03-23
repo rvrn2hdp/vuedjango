@@ -9,6 +9,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Detail from './components/Detail.vue'
 import List from './components/List.vue'
+import ListCategory from './components/ListCategory.vue'
 
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
@@ -19,6 +20,7 @@ Vue.config.productionTip = false
 const routes = [
   { path: '/', component: List },
   { path: '/detail/:id', component: Detail },
+  { path: '/category/:id/elements', component: ListCategory },
 ]
 
 const router = new VueRouter({

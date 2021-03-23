@@ -1,11 +1,11 @@
 <template>
   <div>
     <b-list-group>
-      <div v-for="c in categories" v-bind:key="c.id">
+      <div v-for="t in types" v-bind:key="t.id">
         <b-list-group-item button>
-          <router-link :to="'/category/' + c.id + '/elements'">
+          <router-link :to="'/types/' + t.id + '/elements'">
             <!-- utilizar siempre : antes de utilizar data dinamica (propiedad) -->
-            {{ c.title }}
+            {{ t.title }}
           </router-link>
         </b-list-group-item>
       </div>
@@ -20,14 +20,14 @@ export default {
   },
   data() {
     return {
-      categories: [], // se define la propiedad o variable que vamos a utilizar
+      types: [], // se define la propiedad o variable que vamos a utilizar
     };
   },
   methods: {
     findAll: function () {
-      fetch("http://127.0.0.1:8000/api/category/?format=json") // se hace la peticion a la REST Api
+      fetch("http://127.0.0.1:8000/api/types/?format=json") // se hace la peticion a la REST Api
         .then((res) => res.json()) // si se recibe algo, se guarda en un json
-        .then((res) => (this.categories = res)); // se imprime en consola
+        .then((res) => (this.types = res)); // se imprime en consola
     },
   },
 };
