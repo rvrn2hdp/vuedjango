@@ -1,27 +1,35 @@
 <template>
   <div id="app">
     <!-- img alt="Vue logo" src="./assets/logo.png" -->
-    <Header/>
-    <Categories/>
-    <!--List/-->
-    <!--Detail></Detail-->
-    <router-link to="/">List</router-link>
-    <router-link to="/detail">Detail</router-link>
-    <router-view></router-view>
+    <Header />
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-md-4">
+          <Categories />
+          <br>
+          <Types />
+        </div>
+        <div class="col-md-8">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-
-import Header from './components/Header.vue'
+import Header from "./components/Header.vue";
 //import HelloWorld from './components/HelloWorld.vue'
-import Categories from './components/Categories.vue'
+import Categories from "./components/Categories.vue";
+import Types from "./components/Types.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
     Categories,
-  }
-}
+    Types,
+  },
+};
 </script>

@@ -1,14 +1,13 @@
 <template>
   <div>
+    <h5>Categories</h5>
     <b-list-group>
-      <div v-for="c in categories" v-bind:key="c.id">
-        <b-list-group-item button>
+        <b-list-group-item button v-for="c in categories" v-bind:key="c.id">
           <router-link :to="'/category/' + c.id + '/elements'">
             <!-- utilizar siempre : antes de utilizar data dinamica (propiedad) -->
             {{ c.title }}
           </router-link>
         </b-list-group-item>
-      </div>
     </b-list-group>
   </div>
 </template>

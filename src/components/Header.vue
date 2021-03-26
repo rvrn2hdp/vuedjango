@@ -15,7 +15,7 @@
           <b-dropdown-item
             v-for="t in types"
             v-bind:key="t.id"
-            :to="'/type/' + t.id + '/elements'"
+            :to="'/types/' + t.id + '/elements'"
             >{{ t.title }}
             </b-dropdown-item>
           <router-link></router-link>
@@ -49,12 +49,12 @@ export default {
   },
   methods: {
     findAllTypes: function () {
-      fetch("http://127.0.0.1:8000/api/types/?format=json") // se hace la peticion a la REST Api
+      fetch("http://localhost:8000/api/types/?format=json") // se hace la peticion a la REST Api
         .then((res) => res.json()) // si se recibe algo, se guarda en un json
         .then((res) => (this.types = res)); // se imprime en consola
     },
     findAllCategory: function () {
-      fetch("http://127.0.0.1:8000/api/category/?format=json") // se hace la peticion a la REST Api
+      fetch("http://localhost:8000/api/category/?format=json") // se hace la peticion a la REST Api
         .then((res) => res.json()) // si se recibe algo, se guarda en un json
         .then((res) => (this.categories = res)); // se imprime en consola
     },

@@ -22,12 +22,12 @@ export default {
   methods: {
     findAll: function () {
       fetch(
-        "http://127.0.0.1:8000/api/category/" +
+        "http://localhost:8000/api/types/" +
           this.$route.params.id +
           "/elements/?format=json"
-      ) // se hace la peticion a la REST Api
-        .then((res) => res.json()) // si se recibe algo, se guarda en un json
-        .then((res) => (this.elements = res)); // se imprime en consola
+      )
+        .then((res) => res.json())
+        .then((res) => (this.elements = res));
     },
   },
   watch: {
